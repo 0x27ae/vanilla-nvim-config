@@ -1,4 +1,4 @@
-# INIT.VIM ⌨️
+# init.vim ⌨️
 
 Just a basic neovim configuration to get stated with.
 
