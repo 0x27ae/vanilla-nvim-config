@@ -1,3 +1,4 @@
+![neovimLogo](https://raw.githubusercontent.com/neovim/neovim.github.io/master/logos/neovim-logo-300x87.png)
 # init.vim ⌨️
 
 ### <strong>___Just a basic neovim configuration to get stated with.___</strong>
