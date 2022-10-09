@@ -23,7 +23,6 @@ Plug 'https://github.com/tpope/vim-surround' "CHANGE THE CONTAINER SYMBOLS
 Plug 'https://github.com/tpope/vim-commentary' "COMMENTER
 Plug 'https://github.com/psliwka/vim-smoothie' "SMOOTH SCROLLING PLUGIN
 Plug 'https://github.com/pangloss/vim-javascript' "JS STUFF
-Plug 'https://github.com/junegunn/fzf' "FZF FOR SEARCHING AND OPENING FILES
 Plug 'https://github.com/EdenEast/nightfox.nvim' "NIGHT FOX THEMES
 Plug 'https://github.com/jacoborus/tender.vim' "TENDER THEME
 Plug 'https://github.com/ellisonleao/gruvbox.nvim' "GRUV BOX THEME
@@ -35,10 +34,9 @@ Plug 'https://github.com/ellisonleao/glow.nvim' "GLOW MARKDOWN
 Plug 'https://github.com/nvim-telescope/telescope.nvim' "TELESCOPE TO FIND FILES
 Plug 'https://github.com/nvim-lua/plenary.nvim' "TELESCOPE DEPENDENCY
 Plug 'https://github.com/norcalli/nvim-colorizer.lua' "SHOWS COLOR FOR COLOR CODES
-Plug 'https://github.com/dstein64/nvim-scrollview' "SCROLLBAR
 Plug 'https://github.com/RRethy/vim-illuminate' "CURSOR WORD HIGHLIGHTER
-Plug 'https://github.com/wincent/command-t' "MORE SPEED WHILE USING TELESCOPE
 Plug 'https://github.com/frazrepo/vim-rainbow' "RAINBOW BRACKETS
+Plug 'https://github.com/Xuyuanp/scrollbar.nvim' "SCROLLBAR
 
 call plug#end()
 
@@ -49,7 +47,7 @@ colorscheme	gruvbox
 let mapleader = " "
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-t> :TagbarToggle<CR>
-nnoremap <C-s> : :w!<CR>
+nnoremap <C-s> :w!<CR>
 nnoremap <leader>ff :Telescope find_files<CR>
 
 let g:airline_theme='onedark'
@@ -70,4 +68,11 @@ let g:rainbow_active = 1
 let g:smoothie_enabled=1
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+augroup ScrollbarInit
+  autocmd!
+  autocmd WinScrolled,VimResized,QuitPre * silent! lua require('scrollbar').show()
+  autocmd WinEnter,FocusGained           * silent! lua require('scrollbar').show()
+  autocmd WinLeave,BufLeave,BufWinLeave,FocusLost            * silent! lua require('scrollbar').clear()
+augroup end
 
