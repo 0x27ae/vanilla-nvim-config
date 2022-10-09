@@ -5,9 +5,9 @@
 <br /><br />
 <hr style="border:2px solid gray">
 
-In macOS and linux, the init.vim file is located in ~/.config/nvim folder 📁
+In macOS and linux, the init.vim file is located in <strong>~/.config/nvim/</strong> folder 📁
 
-In windows, the init.the vim file is located in ~/AppData/Local/nvim/ folder📁<br /><br />
+In windows, the init.the vim file is located in <strong>~/AppData/Local/nvim/</strong> folder📁<br /><br />
 
 ![nvim-config](https://user-images.githubusercontent.com/85884403/193659972-4f77e92a-149a-4c7d-b977-69d43755b277.png)
 #### 📌 this is how neovim would look like after the installation of the plugins<br /><br />
